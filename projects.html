@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preetam Kurella | Projects</title>
+  <link rel="icon" type="image/png" href="gift-box.png" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --primary: #ffffff;
+      --secondary: #2e7d32;
+      --dark: #000000;
+      --light: #111111;
+      --gray: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--dark);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navigation */
+    nav {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+
+    /* Hamburger menu button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 25px;
+      height: 20px;
+      justify-content: space-between;
+    }
+
+    .hamburger div {
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 150px 0 100px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 50px;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--secondary);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: var(--light);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-img {
+      height: 200px;
+      background: var(--gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+
+    .project-info {
+      padding: 20px;
+    }
+
+    .project-info h3 {
+      margin-bottom: 10px;
+    }
+
+    .project-info p {
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--secondary);
+      color: var(--primary);
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--light);
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .social-links {
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a.github:hover {
+      color: white;
+    }
+
+    .social-links a.linkedin:hover {
+      color: #0077b5;
+    }
+
+    .social-links a.instagram:hover {
+      color: #e1306c;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        height: calc(100% - 60px);
+        width: 200px;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 200;
+      }
+
+      .nav-links.active {
+        transform: translateX(0);
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">Preetam Kurella</a>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Section -->
+  <section class="projects">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-img">
+            <i class="fas fa-laptop-medical fa-3x"></i>
+          </div>
+          <div class="project-info">
+            <h3>PCOS Detection</h3>
+            <p>A Machine Learning model to detect Polycystic Ovary Syndrome early using various health parameters.</p>
+            <a href="https://github.com/lightsaber11/PCOS-Project" target="_blank" class="btn">View Project</a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-img">
+            <i class="fas fa-university fa-3x"></i>
+          </div>
+          <div class="project-info">
+            <h3>College Clubs Portal</h3>
+            <p>A platform for college clubs to manage activities and engage with students.</p>
+            <a href="https://github.com/lightsaber11/MVGRCA-WebDesigns_and_files" target="_blank" class="btn">View Project</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Designs & Works Section -->
+  <section class="designs-works" style="padding: 50px 0;">
+    <div class="container">
+      <h2 class="section-title">My Designs & Works</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <a href="https://scholarwolf-design.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="project-img" style="height: 200px; overflow: hidden;">
+              <iframe src="https://scholarwolf-design.netlify.app/" style="border:none; width: 100%; height: 200px;" title="Scholar Wolf Preview"></iframe>
+            </div>
+            <div class="project-info" style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <h3>SCHOLARWOLF</h3>
+                <p>Website design and development for Scholar Wolf.</p>
+              </div>
+              <button style="background: transparent; border: none; font-weight: 600; color: white; cursor: pointer; white-space: nowrap; padding: 0 10px; font-family: inherit; display: flex; align-items: center; gap: 5px;">
+                Visit Site
+                <span style="display: inline-block; transform: rotate(-45deg); font-size: 1.2rem;">&#8599;</span>
+              </button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://github.com/lightsaber11" class="github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/preetamkurella" class="linkedin" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/preetam.kurella/?hl=en" class="instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2023 Preetam Kurella. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
